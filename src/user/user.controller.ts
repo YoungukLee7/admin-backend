@@ -7,7 +7,7 @@ import { UserResponseDto } from './dto/user-response.dto'
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard'
 import { Public } from 'src/auth/public.decorator'
 
-@ApiTags('User') // 스웨거에 묶여 있을 그룹명
+@ApiTags('User') // 스웨거에 묶여 있을 그룹명이다
 @Controller('user')
 export class UserController {
     constructor(private readonly userService: UserService) {}
