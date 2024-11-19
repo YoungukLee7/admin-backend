@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres_local
+    environment:
+      POSTGRES_USER: postgres  # 사용자 이름 설정
+      POSTGRES_PASSWORD: postgres  # 비밀번호 설정
+      POSTGRES_DB: postgres  # 기본 데이터베이스 이름 설정
+    ports:
+      - "5432:5432"  # 로컬에서 5432 포트로 접근 가능
+    volumes:
+      - ./docker/postgres:/var/lib/postgresql/data  # 프로젝트 폴더에 볼륨을 설정
+volumes:
+  postgres_data:
