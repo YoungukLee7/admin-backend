@@ -30,13 +30,17 @@ export class UserService {
 
     async findAll() {
         try {
-            return await this.prisma.user.findMany({
+            const user = await this.prisma.user.findMany({
                 where: {
-                    isDeleted: 'No',
+                    //isDeleted: 'No',
                 },
             })
+
+            console.log(`사용자 정보 목록: ${user}`)
+
+            return user
         } catch (error) {
-            throw new NotFoundException()
+            throw new NotFoundException('데이터 없어')
         }
     }
 

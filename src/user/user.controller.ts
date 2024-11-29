@@ -81,7 +81,8 @@ export class UserController {
         return this.userService.findOne(email)
     }
 
-    //@UseGuards(JwtAuthGuard)///
+    //@UseGuards(JwtAuthGuard)
+    @Public()
     @Get('list')
     @ApiOperation({ summary: '사용자 목록 조회', description: '사용자 목록을 조회한다.' })
     findAll() {
